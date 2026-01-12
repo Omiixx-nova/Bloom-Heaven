@@ -1,0 +1,183 @@
+Bloom Heaven is an innovative digital flower gifting platform where users can:
+
+Customize flower bouquets
+
+Add personal digital messages (text, image, or video)
+
+Generate a unique QR code attached to each bouquet
+
+Allow recipients to scan the QR code to view the message
+
+Manage orders via a secure user account
+
+The platform must include authentication, authorization, protected routes, and QR-based message access.
+
+🔐 Authentication & Authorization (REQUIRED)
+User Authentication
+
+Implement Signup & Login
+
+Password hashing using bcrypt
+
+Session-based authentication using express-session
+
+Logout functionality
+
+Authorization
+
+Only logged-in users can:
+
+Create bouquets
+
+Write messages
+
+Generate QR codes
+
+View order history
+
+Message edit/delete routes must be restricted to message owner
+
+QR scan route is read-only and public
+
+🏠 Pages & Routes
+1. Home Page (/)
+
+Hero section text:
+“Where Flowers Speak Your Heart Digitally”
+
+CTA:
+
+Create Bouquet (redirects to login if not authenticated)
+
+Login / Signup
+
+2. Authentication Pages
+
+/signup
+
+/login
+
+/logout
+
+Simple, clean UI
+
+3. Flower Customization Page (/create)
+
+Select:
+
+Occasion
+
+Flower type
+
+Color theme
+
+Display order summary
+
+4. Message Customization Page (/message/create)
+
+Text message input
+
+Image upload
+
+Video upload
+
+Sender name
+
+Delivery date input
+
+5. QR Code Generator (VERY IMPORTANT)
+
+Generate unique QR code using qrcode library
+
+QR code links to:
+/scan/:messageId
+
+QR generated only after message creation
+
+QR downloadable as PNG
+
+6. QR Scan Message Page (/scan/:messageId)
+
+Public access (NO login required)
+
+Displays:
+
+Sender name
+
+Text message
+
+Image
+
+Video
+
+Beautiful emotional UI
+
+Mobile-first design
+
+7. User Dashboard (/dashboard)
+
+Protected route
+
+View:
+
+Order history
+
+Generated QR codes
+
+Message status
+
+Reorder option
+
+🛠 Backend Requirements
+
+Use Express.js
+
+Store users, messages, and orders in:
+
+JSON files OR in-memory storage (for free Replit)
+
+Use UUID for unique IDs
+
+Use multer for file uploads
+
+Serve uploaded files statically
+
+🎨 Frontend Requirements
+
+Responsive layout
+
+Soft pastel color palette
+
+Elegant flower-themed design
+
+Smooth animations (fade, bloom)
+
+📦 Required Libraries
+
+express
+
+bcrypt
+
+express-session
+
+multer
+
+qrcode
+
+uuid
+
+📁 Output Expectations
+
+Generate:
+
+server.js
+
+routes/
+
+views/ or public/
+
+style.css
+
+auth.js middleware
+
+Add comments explaining authentication & QR logic
